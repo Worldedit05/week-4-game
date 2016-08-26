@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Star Wars RPG</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <title>Star Wars RPG</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-	<header id="header" class="container">
-		<div class="title">
-			<h1>Star Wars RPG</h1>
-		</div>	
-	</header><!-- /header -->
-	<div class="container">
-		<div class="row starter">
-			<div id="character1" class="char-img">
-				<img src="http://placehold.it/170x170" alt="">
-			</div>
-			<div id="character2" class="char-img">
-				<img src="http://placehold.it/170x170" alt="">
-			</div>
-			<div id="character3" class="char-img">
-				<img src="http://placehold.it/170x170" alt="">
-			</div>
-			<div id="character4" class="char-img">
-				<img src="http://placehold.it/170x170" alt="">
-			</div>
-			<div id="character5" class="char-img">
-				<img src="http://placehold.it/170x170" alt="">
-			</div>
-		</div>
-		<div class="row" style="padding: 0 11px;">
-			<h2>Enemies Available To Attack</h2>
-		</div>
-		<div id="enemies" class="row">
-			
-		</div>
-		<div class="row" style="padding: 0 11px;">
-			<div id="user" class="col">
-				<h2>Your character</h2>
-			</div>
-			<div id="computer" class="col" style="padding: 0 11px;">
-				<h2>Defender</h2>
-			</div>
-		</div>
-		<div class="row">
-			
-		</div>
-		<div class="row">
-			<button id="button" type="">Attack</button>
-		</div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <header id="header" class="container">
+        <div class="title">
+            <h1>Star Wars RPG</h1>
+        </div>
+    </header>
+    <!-- /header -->
+    <div class="container">
+        <div class="row starter">
+            <div id="character1" class="char-img stat-banner">
+                <img src="http://placehold.it/170x170" alt="">
+                <h3></h3>
+            </div>
+            <div id="character2" class="char-img stat-banner">
+                <img src="http://placehold.it/170x170" alt="">
+                <h3></h3>
+            </div>
+            <div id="character3" class="char-img stat-banner">
+                <img src="http://placehold.it/170x170" alt="">
+                <h3></h3>
+            </div>
+            <div id="character4" class="char-img stat-banner">
+                <img src="http://placehold.it/170x170" alt="">
+                <h3></h3>
+            </div>
+            <div id="character5" class="char-img stat-banner">
+                <img src="http://placehold.it/170x170" alt="">
+                <h3></h3>
+            </div>
+        </div>
+        <div class="row" style="padding: 0 11px;">
+            <h2>Enemies Available To Attack</h2>
+        </div>
+        <div id="enemies" class="row">
+        </div>
+        <div class="row" style="padding: 0 11px;">
+            <div id="user" class="col">
+                <h2>Your character</h2>
+            </div>
+            <div id="computer" class="col" style="padding: 0 11px;">
+                <h2>Defender</h2>
+            </div>
+        </div>
+        <div class="row message">
+        </div>
+        <div class="hidden">
+        </div>
+        <div class="row">
+            <button id="button" type="">Attack</button>
+            <button id="reset" type="">Restart</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
+
 </html>

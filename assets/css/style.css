@@ -33,7 +33,16 @@ h2 {
 	float: left;
 	margin: 11px;
 }
-#button {
+.stat-banner {
+	text-align: center;
+}
+.hidden {
+	display: none;
+}
+#enemies {
+	height: 210px;
+}
+#button, #reset {
 	display: block;
 	margin: 0 auto;
 }
