@@ -8,7 +8,7 @@ $(document).ready(function() {
     }
     var character2 = {
         attack: 8,
-        HP: 120,
+        HP: 135,
         counterAttack: 10
     }
     var character3 = {
@@ -52,49 +52,56 @@ $(document).ready(function() {
 
     function combat() {
 
-        heroAttack = $('.hero').attr('data-attack');
-        heroHP = $('.hero').attr('data-HP');
-        heroCounterAttack = $('.hero').attr('data-counterAttack');
-        defenderAttack = $('.defender').attr('data-attack');
-        defenderHP = $('.defender').attr('data-hp');
-        defenderCounterAttack = $('.defender').attr('data-counterAttack');
+        if (heroSet < 0 || defenderSet < 0) {
 
-        // Increase the player's attack by base 8
+        	$('.message').html('<h2>Please select a Defender!</h2>');
+            return
+        } else {
 
-        heroAttack = parseInt(heroAttack) + 8;
+            heroAttack = $('.hero').attr('data-attack');
+            heroHP = $('.hero').attr('data-HP');
+            heroCounterAttack = $('.hero').attr('data-counterAttack');
+            defenderAttack = $('.defender').attr('data-attack');
+            defenderHP = $('.defender').attr('data-hp');
+            defenderCounterAttack = $('.defender').attr('data-counterAttack');
 
-        // Attacker reduces defender's health with attack
+            // Increase the player's attack by base 8
 
-        defenderHP = defenderHP - heroAttack;
-        $('.defender').attr({ 'data-attack': defenderAttack, 'data-HP': defenderHP, 'data-counterAttack': defenderCounterAttack });
-        $('.defender').find('h3').replaceWith('<h3>Health: ' + defenderHP + '</h3>');
+            heroAttack = parseInt(heroAttack) + 8;
 
-        // Defender reduces attacker's health with counterAttack
+            // Attacker reduces defender's health with attack
 
-        heroHP = heroHP - defenderCounterAttack;
-        $('.hero').attr({ 'data-attack': heroAttack, 'data-HP': heroHP, 'data-counterAttack': heroCounterAttack });
-        $('.hero').find('h3').replaceWith('<h3>Health: ' + heroHP + '</h3>');
+            defenderHP = defenderHP - heroAttack;
+            $('.defender').attr({ 'data-attack': defenderAttack, 'data-HP': defenderHP, 'data-counterAttack': defenderCounterAttack });
+            $('.defender').find('h3').replaceWith('<h3>Health: ' + defenderHP + '</h3>');
 
-        // Check to see if the player's hp is 0 (lose condition)
+            // Defender reduces attacker's health with counterAttack
 
-        if (heroHP <= 0) {
+            heroHP = heroHP - defenderCounterAttack;
+            $('.hero').attr({ 'data-attack': heroAttack, 'data-HP': heroHP, 'data-counterAttack': heroCounterAttack });
+            $('.hero').find('h3').replaceWith('<h3>Health: ' + heroHP + '</h3>');
 
-            $('.message').html('<h2>You lose! Game Over!</h2>');
-            $('#reset').show();
+            // Check to see if the player's hp is 0 (lose condition)
 
-        }
-        // Check to see if the defender's hp is 0
-        else if (defenderHP <= 0) {
-            // If the defender's hp is 0, are there any enemies left?
-            if ($('#enemies').children().length == 0) {
-                // If no than game over (won condition)
-                $('.message').html('<h2>You Win! Game Over!</h2>');
+            if (heroHP <= 0) {
+
+                $('.message').html('<h2>You lose! Game Over!</h2>');
                 $('#reset').show();
-            } else {
-                // If yes than select another defender
-                $('.message').html('<h2>Defender Defeated! Pick another opponent to continue!</h2>');
-                $('.hidden').append($('.defender').removeClass('defender'));
-                defenderSet = -1;
+
+            }
+            // Check to see if the defender's hp is 0
+            else if (defenderHP <= 0) {
+                // If the defender's hp is 0, are there any enemies left?
+                if ($('#enemies').children().length == 0) {
+                    // If no than game over (won condition)
+                    $('.message').html('<h2>You Win! Game Over!</h2>');
+                    $('#reset').show();
+                } else {
+                    // If yes than select another defender
+                    $('.message').html('<h2>Defender Defeated! Pick another opponent to continue!</h2>');
+                    $('.hidden').append($('.defender').removeClass('defender'));
+                    defenderSet = -1;
+                }
             }
         }
     }
