@@ -1,48 +1,66 @@
-
 * {
     box-sizing: border-box;
 }
+
 body {
-	font-family: "Arial Black", Gadget, sans-serif;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
 h1 {
-	font-size: 24px;
+    font-size: 24px;
 }
+
 h2 {
-	font-size: 20px;
+    font-size: 20px;
 }
+
 .container {
-	width: 960px;
-	margin: auto;
+    width: 960px;
+    margin: auto;
 }
+
 .row {
-	width: 100%;
-	height: auto;
-	overflow:auto
+    width: 100%;
+    height: auto;
+    overflow: auto
 }
+
 .col {
-	width: 50%;
-	float: left;
+    width: 50%;
+    float: left;
 }
+
 .title {
-	height: 45px;
-	text-align: center;
-	padding: 10.5px;
+    height: 45px;
+    text-align: center;
+    padding: 10.5px;
 }
+
 .char-img {
-	float: left;
-	margin: 11px;
+    float: left;
+    margin: 11px;
 }
+
 .stat-banner {
-	text-align: center;
+    text-align: center;
 }
+
 .hidden {
-	display: none;
+    display: none;
 }
+
+.message {
+    text-align: center;
+}
+
 #enemies {
-	height: 210px;
+    height: 210px;
 }
-#button, #reset {
-	display: block;
-	margin: 0 auto;
+
+#button,
+#reset {
+    display: block;
+    margin: 0 auto;
 }

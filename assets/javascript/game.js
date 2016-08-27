@@ -14,7 +14,7 @@ $(document).ready(function() {
     var character3 = {
         attack: 8,
         HP: 100,
-        counterAttack: 20
+        counterAttack: 12
     }
     var character4 = {
         attack: 8,
@@ -42,7 +42,7 @@ $(document).ready(function() {
         $('#character4').attr({ 'data-attack': character4.attack, 'data-HP': character4.HP, 'data-counterAttack': character4.counterAttack }).find('h3').replaceWith('<h3>Health: ' + character4.HP + '</h3>');
         $('#character5').attr({ 'data-attack': character5.attack, 'data-HP': character5.HP, 'data-counterAttack': character5.counterAttack }).find('h3').replaceWith('<h3>Health: ' + character5.HP + '</h3>');
         $('.defender').removeClass('defender');
-  		$('.hero').removeClass('hero');
+        $('.hero').removeClass('hero');
     }
 
     // Might need a function that resolves combat
@@ -79,7 +79,7 @@ $(document).ready(function() {
 
         if (heroHP <= 0) {
 
-            $('.message').html('<h2>Game Over!</h2>');
+            $('.message').html('<h2>You lose! Game Over!</h2>');
             $('#reset').show();
 
         }
@@ -92,7 +92,7 @@ $(document).ready(function() {
                 $('#reset').show();
             } else {
                 // If yes than select another defender
-                $('.message').html('<h2>Defender Defeated! Pick another opponent <--- </h2>');
+                $('.message').html('<h2>Defender Defeated! Pick another opponent to continue!</h2>');
                 $('.hidden').append($('.defender').removeClass('defender'));
                 defenderSet = -1;
             }
@@ -145,12 +145,16 @@ $(document).ready(function() {
                 console.log($('.defender').attr('id'));
 
             }
+        } else {
+
+            $('.message').html('<h2>Characters have been selected. Press "Attack" to continue!</h2>');
         }
     });
 
     // Attack button calls a combat function
 
     $("#button").click(function() {
+        $('.message').empty();
         combat();
     });
 
